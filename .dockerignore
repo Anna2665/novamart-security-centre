@@ -1,0 +1,11 @@
+.git
+.env
+data
+venv
+.venv
+node_modules
+frontend
+e2e
+**/__pycache__
+**/*.pyc
+*.md

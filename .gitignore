@@ -1,0 +1,14 @@
+# secrets and local state - never commit these
+.env
+data/
+*.db
+
+# build output and tooling
+venv/
+.venv/
+node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+.netlify

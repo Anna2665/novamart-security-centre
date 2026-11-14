@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+@import "@xyflow/react/dist/style.css";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --color-bg: #f4f6fb;
+  --color-panel: #ffffff;
+  --color-panel2: #f8fafc;
+  --color-line: #e2e8f0;
+  --color-ink: #0f172a;
+  --color-mute: #64748b;
+  --color-cy: #4f46e5;
+  --color-bl: #2563eb;
+  --color-rd: #dc2626;
+  --color-gn: #059669;
+  --color-am: #b45309;
+  --color-vi: #7c3aed;
+}
+
+html, body, #root { height: 100%; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: var(--font-sans); overflow: hidden; -webkit-font-smoothing: antialiased; }
+#root { position: relative; z-index: 1; }
+::selection { background: rgba(79, 70, 229, 0.2); }
+* { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+code, pre, .mono { font-family: var(--font-mono); }
+.card { background: #fff; border: 1px solid var(--color-line); border-radius: 12px; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.05); }
+.glow-cy { border-color: rgba(79, 70, 229, 0.45); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
+.glow-rd { border-color: rgba(220, 38, 38, 0.5); box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1); }
+.glow-gn { border-color: rgba(5, 150, 105, 0.5); box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1); }
+.glow-am { border-color: rgba(180, 83, 9, 0.5); box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.1); }
+
+@keyframes pulse-rd { 0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); } 50% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); } }
+@keyframes pulse-gn { 0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.35); } 50% { box-shadow: 0 0 0 8px rgba(5, 150, 105, 0); } }
+@keyframes pulse-cy { 0%, 100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.35); } 50% { box-shadow: 0 0 0 8px rgba(79, 70, 229, 0); } }
+@keyframes dash { to { stroke-dashoffset: -24; } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-9px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-6px); } 80% { transform: translateX(4px); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.pulse-rd { animation: pulse-rd 1.4s infinite; }
+.pulse-gn { animation: pulse-gn 2s infinite; }
+.pulse-cy { animation: pulse-cy 1.6s infinite; }
+.shake { animation: shake 0.45s; }
+.rise { animation: rise 0.35s both; }
+.blink { animation: blink 1s steps(2) infinite; }
+.flicker { }
+.glitch { }
+.spin { animation: spin 1s linear infinite; }
+.marching { stroke-dasharray: 8 8; animation: dash 0.8s linear infinite; }
+.scanline::after { display: none; }
+
+.react-flow { background: transparent !important; }
+.react-flow__attribution { display: none !important; }
+.react-flow__controls { background: #fff; border: 1px solid var(--color-line); border-radius: 10px; overflow: hidden; box-shadow: none; }
+.react-flow__controls-button { background: #fff; border-bottom: 1px solid var(--color-line); fill: #475569; }
+.react-flow__controls-button:hover { background: #f1f5f9; }
+.react-flow__minimap { background: #fff !important; border: 1px solid var(--color-line); border-radius: 10px; }
+.react-flow__handle { opacity: 0; pointer-events: none; }
+.react-flow__edge-path { stroke-linecap: round; }
+
+input, select, textarea { background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; color: var(--color-ink); padding: 8px 11px; outline: none; transition: border 0.15s, box-shadow 0.15s; width: 100%; font-size: 14px; }
+input::placeholder, textarea::placeholder { color: #94a3b8; }
+input:focus, select:focus, textarea:focus { border-color: var(--color-cy); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.14); }
+input[type="radio"], input[type="checkbox"] { width: auto; padding: 0; accent-color: var(--color-cy); }
+select option { background: #fff; }
+table { border-collapse: collapse; width: 100%; }
+th { text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-mute); padding: 9px 12px; border-bottom: 1px solid var(--color-line); white-space: nowrap; background: #f8fafc; }
+td { padding: 10px 12px; border-bottom: 1px solid #eef2f7; font-size: 13px; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.recharts-tooltip-wrapper { outline: none; }
+@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
