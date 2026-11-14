@@ -1,4 +1,4 @@
-# NovaMart web pages on Netlify. The API runs on Render (see render.yaml); its address is the
+# NovaMart web pages on Netlify. The API runs on Railway (novamart-api); its address is the
 # VITE_API_URL build variable, set in Netlify -> Project configuration -> Environment variables.
 [build]
   base = "frontend"
@@ -15,4 +15,4 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "no-referrer"
     # connect-src must list the API host (https for requests, wss for the live feed)
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://novamart-api.onrender.com wss://novamart-api.onrender.com; frame-ancestors 'none'; base-uri 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://novamart-api-production-e7400519.up.railway.app wss://novamart-api-production-e7400519.up.railway.app; frame-ancestors 'none'; base-uri 'self'"
